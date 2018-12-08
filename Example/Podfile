@@ -1,0 +1,6 @@
+use_frameworks!
+target 'UTLight_Tests' do
+  pod 'UTLight', :path => '../'
+  
+  
+end
