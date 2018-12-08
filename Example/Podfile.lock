@@ -1,0 +1,16 @@
+PODS:
+  - UTLight (0.1.0)
+
+DEPENDENCIES:
+  - UTLight (from `../`)
+
+EXTERNAL SOURCES:
+  UTLight:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UTLight: 32b5267b1e1ec5ed1d221255904d9aae4e42dda1
+
+PODFILE CHECKSUM: 6a78253bd9fc2b294170294ebfb445b79d325f67
+
+COCOAPODS: 1.5.3

@@ -2,41 +2,27 @@
 # Be sure to run `pod lib lint UTLight.podspec' to ensure this is a
 # valid spec before submitting.
 #
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
   s.name             = 'UTLight'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of UTLight.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Kit easing work with UTI.'
+  s.swift_version    = '4.2'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  A kit easing work with UTI (Uniform Type Identification).
                        DESC
 
   s.homepage         = 'https://github.com/Vladlex/UTLight'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Vladlex' => 'a.gordeev@dlg.im' }
+  s.author           = { 'Vladlex' => 'vladlexion@gmail.com' }
   s.source           = { :git => 'https://github.com/Vladlex/UTLight.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/vladlexion'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'UTLight/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'UTLight' => ['UTLight/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Foundation', 'MobileCoreServices'
+  
 end

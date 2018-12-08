@@ -1,28 +1,49 @@
 import XCTest
 import UTLight
+import MobileCoreServices
 
 class Tests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testAppleIDsAreDeclared() {
+        XCTAssertTrue(UTLIdentifier.appleICNS.isDeclared)
+        XCTAssertTrue(UTLIdentifier.appleScript.isDeclared)
+        XCTAssertTrue(UTLIdentifier.JPEG.isDeclared)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testFictionalIDsAreNotDeclared() {
+        XCTAssertFalse(UTLIdentifier("my.own.type").isDeclared)
+        XCTAssertFalse(UTLIdentifier("\(UTLIdentifier.appleICNS.rawValue).my").isDeclared)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testIdsConforming() {
+        XCTAssertTrue(UTLIdentifier.appleICNS.conforms(to: .image))
+        XCTAssertTrue(UTLIdentifier.GIF.conforms(to: .image))
+        XCTAssertTrue(UTLIdentifier.AVIMovie.conforms(to: .movie))
+        XCTAssertTrue(UTLIdentifier.AVIMovie.conforms(to: .audiovisualContent))
+        XCTAssertTrue(UTLIdentifier.MPEG.conforms(to: .audiovisualContent))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
-        }
+    func testIdsNotConforming() {
+        XCTAssertFalse(UTLIdentifier.video.conforms(to: .audio))
+        XCTAssertFalse(UTLIdentifier.image.conforms(to: .JPEG))
     }
+    
+    func testIDsMimeTypes() {
+        XCTAssertNotNil(UTLIdentifier.GIF.preferredMimeType)
+        XCTAssertEqual(UTLIdentifier.GIF.preferredMimeType!.rawValue, "image/gif")
+        XCTAssertEqual(UTLIdentifier.JPEG.preferredMimeType!.rawValue, "image/jpeg")
+    }
+    
+    func testBundle() {
+        let bundleUrl = UTLIdentifier.appleICNS.declaringBundleURL
+        XCTAssertNotNil(bundleUrl)
+        
+        let bundle = Bundle(url: bundleUrl!)
+        XCTAssertNotNil(bundle)
+        
+        let plist = bundle!.infoDictionary
+        XCTAssertNotNil(plist)
+    }
+    
     
 }
