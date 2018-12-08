@@ -10,8 +10,9 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-CI testing performs on iOS 12.1
-Xcode 10.0, swift 4.2
+CI: testing performs on iOS 12.1
+
+Development: Xcode 10.0, swift 4.2
 
 
 ## Installation
