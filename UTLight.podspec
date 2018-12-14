@@ -5,7 +5,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UTLight'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Kit easing work with UTI.'
   s.swift_version    = '4.2'
 

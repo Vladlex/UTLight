@@ -46,4 +46,26 @@ class Tests: XCTestCase {
     }
     
     
+    func testURLFileExtension() {
+        // File does not exist actually.
+        let url = Bundle.main.bundleURL.appendingPathComponent("image.png")
+        
+        let uti = url.utlight_UTLIdentifier
+        XCTAssertNotNil(uti)
+        
+        XCTAssertEqual(uti!, UTLIdentifier.PNG)
+    }
+    
+    func testURLMimeType() {
+        // File does not exist actually.
+        let url = Bundle.main.bundleURL.appendingPathComponent("image.jpg")
+        
+        let mimeType = url.utlight_MIMEType
+        XCTAssertNotNil(mimeType)
+        
+        // According to https://tools.ietf.org/html/rfc3745, "image/jpeg" is valid and "image/jpg" isn't.
+        
+        XCTAssertEqual(mimeType!, UTLMIMEType(custom: "image/jpeg"))
+    }
+    
 }

@@ -11,7 +11,7 @@ import Foundation
  A media type (formerly known as MIME type) is a two-part identifier for file formats and format contents transmitted on the Internet.
  The currently registered types are: application, audio, example, font, image, message, model, multipart, text and videom but you can use your very own type using
  */
-public struct UTLMIMEType: RawRepresentable {
+public struct UTLMIMEType: RawRepresentable, Equatable {
     
     public typealias RawValue = String
     
@@ -31,5 +31,9 @@ public struct UTLMIMEType: RawRepresentable {
     
     public var UTMIMEType: CFString {
         return self.rawValue as CFString
+    }
+    
+    public static func == (lhs: UTLMIMEType, rhs: UTLMIMEType) -> Bool {
+        return lhs.rawValue == rhs.rawValue
     }
 }

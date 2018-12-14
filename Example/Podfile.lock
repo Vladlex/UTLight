@@ -1,5 +1,5 @@
 PODS:
-  - UTLight (0.1.0)
+  - UTLight (1.0.0)
 
 DEPENDENCIES:
   - UTLight (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UTLight: 32b5267b1e1ec5ed1d221255904d9aae4e42dda1
+  UTLight: b5d4818a2fb0f01bed70fcb2e18143b4d1bea931
 
 PODFILE CHECKSUM: 6a78253bd9fc2b294170294ebfb445b79d325f67
 
