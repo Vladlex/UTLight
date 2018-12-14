@@ -14,3 +14,6 @@ before_install:
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/UTLight.xcworkspace -scheme UTLight-Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'UTLight-Example'
